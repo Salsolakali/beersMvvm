@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Beers Mvvm</string>
+    <string name="default_error_message">Ha ocurrido un error, por favor inténtelo más tarde</string>
+    <string name="connection_error_message">Ha ocurrido un error de conexión, revisa tu conexión a internet</string>
+    <string name="get_beers">Get Beers</string>
+    <string name="search">Buscar</string>
 </resources>

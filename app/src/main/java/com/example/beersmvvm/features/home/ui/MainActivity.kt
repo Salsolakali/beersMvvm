@@ -13,11 +13,13 @@ import com.example.beersmvvm.core.extensions.doIfInProgress
 import com.example.beersmvvm.core.extensions.doIfSuccess
 import com.example.beersmvvm.core.presentation.Navigator
 import com.example.beersmvvm.databinding.ActivityMainBinding
+import com.example.beersmvvm.features.detail.ui.DetailActivity
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
+
     @Inject
     lateinit var homeViewModel: HomeDataViewModel
 
@@ -90,6 +92,12 @@ class MainActivity : AppCompatActivity() {
                 return false
             }
         })
+
+        beerAdapter.clickListener = { beer ->
+            val bundle = Bundle().apply { putSerializable(DetailActivity.BEER_DETAIL_KEY, beer) }
+            navigator.navigateToDetail(this, bundle, this)
+        }
+
     }
 
     private fun hideLoading() {

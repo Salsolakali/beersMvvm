@@ -12,14 +12,14 @@ data class BeerApi(
     @SerializedName("first_brewed") val first_brewed: String?,
     @SerializedName("description") val description: String,
     @SerializedName("image_url") val image_url: String,
-    @SerializedName("abv") val abv: String?,
-    @SerializedName("ibu") val ibu: String?,
-    @SerializedName("target_fg") val target_fg: String?,
-    @SerializedName("target_og") val target_og: String?,
-    @SerializedName("ebc") val ebc: String?,
-    @SerializedName("srm") val srm: String?,
+    @SerializedName("abv") val abv: Double?,
+    @SerializedName("ibu") val ibu: Int,
+    @SerializedName("target_fg") val target_fg: Int,
+    @SerializedName("target_og") val target_og: Int,
+    @SerializedName("ebc") val ebc: Int,
+    @SerializedName("srm") val srm: Int,
     @SerializedName("ph") val ph: Double?,
-    @SerializedName("attenuation_level") val attenuation_level: String?
+    @SerializedName("attenuation_level") val attenuation_level: Int
 ) {
     fun toDomain(): Beer {
         return Beer(
